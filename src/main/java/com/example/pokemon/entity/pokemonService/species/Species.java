@@ -1,34 +1,7 @@
 package com.example.pokemon.entity.pokemonService.species;
 
-public class Species {
-    private Integer id;
-    private String name;
-    private String url;
+import com.example.pokemon.entity.pokemonService.AbstractIdNameUrl;
 
-    public Species() {
-    }
+public class Species extends AbstractIdNameUrl {
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
 }
