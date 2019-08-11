@@ -1,12 +1,19 @@
 package com.example.pokemon.entity.pokemonService.moves;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @NoArgsConstructor
 public class Moves {
+
     private Integer id;
+
     private Move move;
-    private VersionGroupDetails versionGroupDetails;
+
+    @JsonProperty("version_group_details")
+    private List<VersionGroupDetails> versionGroupDetails;
 }
