@@ -1,14 +1,14 @@
-package com.example.pokemon.service;
+package com.example.pokemon.service.implementation;
 
 import com.example.pokemon.entity.User;
 import com.example.pokemon.repository.UserRepo;
+import com.example.pokemon.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements IUserService {
 
     @Autowired
     UserRepo userRepo;
