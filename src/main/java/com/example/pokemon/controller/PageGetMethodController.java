@@ -25,4 +25,5 @@ public class PageGetMethodController {
     public String userPage(){
         return "closedPage";
     }
+
 }
