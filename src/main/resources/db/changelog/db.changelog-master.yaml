@@ -1,0 +1,49 @@
+databaseChangeLog:
+  - changeSet:
+        id: 1
+        author: Timutron
+        changes:
+          - createTable:
+              tableName: user
+              columns:
+                - column:
+                    name: userId
+                    type: int
+                    autoIncrement: true
+                    constraints:
+                      primaryKey: true
+                      nullable: false
+                - column:
+                    name: login
+                    type: varchar(50)
+                - column:
+                    name: password
+                    type: varchar(50)
+                    constraints:
+                      nullable: false
+                - column:
+                    name: active
+                    type: varchar(50)
+                - column:
+                    name: role
+                    type: varchar(50)
+  - changeSet:
+        id: 2
+        author: Timutron
+        comment: "Создал юзера"
+        changes:
+          - insert:
+              tableName: user
+              columns:
+                - column:
+                    name: login
+                    value: "admin"
+                - column:
+                    name: password
+                    value: "admin"
+                - column:
+                    name: active
+                    value: "true"
+                - column:
+                    name: role
+                    value: USER
