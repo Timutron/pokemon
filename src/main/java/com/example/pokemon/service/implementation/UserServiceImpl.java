@@ -1,9 +1,13 @@
 package com.example.pokemon.service.implementation;
 
 import com.example.pokemon.entity.User;
+import com.example.pokemon.repository.IMyUserRepo;
 import com.example.pokemon.repository.UserRepo;
 import com.example.pokemon.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +17,12 @@ import java.util.List;
 public class UserServiceImpl implements IUserService {
 
     @Autowired
-    UserRepo userRepo;
+    private UserRepo userRepo;
+    @Autowired
+    private IMyUserRepo myUserRepo;
 
     @Autowired
-    BCryptPasswordEncoder bCryptPasswordEncoder;
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Override
     public void save(User user) {
@@ -31,12 +37,12 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public User findByUserId(Integer id) {
-        return userRepo.findByUserId(id);
+    public List<User> findByUserId(Integer id) {
+        return myUserRepo.myFindById(id);
     }
 
     @Override
-    public List<User> findAll() {
-        return userRepo.findAll();
+    public Page<User> findAll(Pageable pageable) {
+        return userRepo.findAll(PageRequest.of(0,5));
     }
 }
