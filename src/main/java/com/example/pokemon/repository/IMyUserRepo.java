@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface IMyUserRepo {
     List<User> myFindById(Integer userId);
+
 }
