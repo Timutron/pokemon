@@ -9,9 +9,8 @@ import javax.persistence.Id;
 
 @Data
 @NoArgsConstructor
-@Entity
 public class Sprites {
-    @Id
+
     private Integer id;
 
     @JsonProperty("back_default")

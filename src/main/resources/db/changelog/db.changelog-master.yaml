@@ -15,18 +15,18 @@ databaseChangeLog:
                       nullable: false
                 - column:
                     name: login
-                    type: varchar(50)
+                    type: varchar(100)
                 - column:
                     name: password
-                    type: varchar(50)
+                    type: varchar(100)
                     constraints:
                       nullable: false
                 - column:
                     name: active
-                    type: varchar(50)
+                    type: varchar(100)
                 - column:
                     name: role
-                    type: varchar(50)
+                    type: varchar(100)
   - changeSet:
         id: 2
         author: Timutron
