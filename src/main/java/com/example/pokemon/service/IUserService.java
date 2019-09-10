@@ -1,6 +1,8 @@
 package com.example.pokemon.service;
 
 import com.example.pokemon.entity.User;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -10,7 +12,7 @@ public interface IUserService {
 
     User findByLogin(String login);
 
-    User findByUserId(Integer id);
+    List<User> findByUserId(Integer id);
 
-    List<User> findAll();
+    Page<User> findAll(Pageable pageable);
 }
