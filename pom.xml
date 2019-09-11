@@ -74,6 +74,12 @@
 			<artifactId>liquibase-core</artifactId>
 			<version>3.8.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-envers -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-envers</artifactId>
+			<version>5.4.4.Final</version>
+		</dependency>
 
 		<dependency>
 			<groupId>javax.servlet</groupId>
