@@ -1,10 +1,12 @@
-package com.example.pokemon.service;
+package com.example.pokemon.hateoas;
 
 import com.example.pokemon.controller.UserController;
 import com.example.pokemon.entity.User;
 import com.example.pokemon.entity.UserResource;
 import org.springframework.hateoas.mvc.ResourceAssemblerSupport;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UserResourceAssembler extends ResourceAssemblerSupport<User, UserResource> {
     public UserResourceAssembler() {
         super(UserController.class, UserResource.class);
