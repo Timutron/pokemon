@@ -6,12 +6,9 @@ import com.example.pokemon.repository.UserRepo;
 import com.example.pokemon.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class UserServiceImpl implements IUserService {
@@ -37,13 +34,13 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public List<User> findByUserId(Integer id) {
-        return myUserRepo.myFindById(id);
+    public User findByUserId(Integer id) {
+        return userRepo.findByUserId(id);
     }
 
     @Override
     public Page<User> findAll(Pageable pageable) {
-        return userRepo.findAll(PageRequest.of(0,5));
+        return userRepo.findAll(pageable);
     }
 }
 
