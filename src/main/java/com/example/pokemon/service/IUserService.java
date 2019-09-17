@@ -6,7 +6,7 @@ import org.springframework.data.domain.Pageable;
 
 public interface IUserService {
 
-    void save(User user);
+    User save(User user);
 
     User findByLogin(String login);
 
