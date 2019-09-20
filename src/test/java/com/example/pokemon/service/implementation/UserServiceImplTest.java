@@ -3,6 +3,7 @@ package com.example.pokemon.service.implementation;
 import com.example.pokemon.entity.User;
 import com.example.pokemon.repository.UserRepo;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -10,8 +11,7 @@ import org.mockito.Mock;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
@@ -33,6 +33,13 @@ class UserServiceImplTest {
         User saveUser = userService.save(newUser);
         assertNotNull(saveUser);
         verify(userRepo, times(1)).save(saveUser);
+    }
+    @DisplayName("Негативный тест на ввод null в логин")
+    @Test
+    void userSetNullLoginEx(){
+        User user = new User();
+        user.setLogin(null);
+        assertThrows(Exception.class, ()->{user.getLogin().length();});
     }
 
     @DisplayName("Тест поиска пользователя по логину")
